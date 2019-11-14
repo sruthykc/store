@@ -1,0 +1,97 @@
+[
+	
+	{
+	"namespace":"com.diviso.graeshoppe.store.avro",
+	"type":"record",
+	"name":"Store",
+	"fields":[
+		{"name":"id",
+		"type":["null","long"]},
+		
+		{"name":"idpCode",
+		"type":["null","string"]},
+		
+		{"name":"storeUniqueId",
+		"type":["null","string"]},
+		
+		{"name":"status",
+		"type":["null","string"]},
+		
+		{"name":"image",
+		"type":["null","bytes"],
+		"default":"\u00FF"},
+		
+		
+		{"name":"name",
+		"type":["null","string"]},
+		
+		
+		{"name":"imageLink",
+		"type":["null","string"],
+		"default": null},
+		
+		{"name":"totalRating",
+		"type":["null","double"],
+		"default": 0.0},
+		
+		{"name":"latLon",
+		"type":["null","string"]},
+		
+		{"name":"locationName",
+		"type":["null","string"],
+		"default": null},
+		
+		{"name":"cotactNumber",
+		"type":["null","long"],
+		"default": null},
+	
+		{"name":"openingTime",
+		"type":"long",
+		"logicalType":"date"},
+		
+		{"name":"email",
+		"type":["null","string"],
+		"default": null},
+		
+		{"name":"closingTime",
+		"type":"long",
+		"logicalType":"date"},
+		
+		{"name":"info",
+		"type":["null","string"],
+		"default": null},
+		
+		{"name":"minAmount",
+		"type":["null","double"],
+		"default": 0.0},
+		
+		{"name":"maxDeliveryTime",
+		"type":"long",
+		"logicalType":"date"},
+		
+		{"name":"propreitorId",
+		"type":["null","long"],
+		"default": null},
+		
+	    {"name":"storeAddressId",
+		"type":["null","long"],
+		"default": null},
+		
+		{"name":"storeSettingsId",
+		"type":["null","long"],
+		"default": null},
+		
+		
+		
+		{"name":"preOrderSettingsId",
+		"type":["null","long"],
+		"default": null},
+		
+		
+		]
+		}
+
+			
+
+
+]
