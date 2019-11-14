@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Store.
+    -->
+    <changeSet id="20191114065958-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="propreitor_id"
+                                 baseTableName="store"
+                                 constraintName="fk_store_propreitor_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="propreitor"/>
+
+        <addForeignKeyConstraint baseColumnNames="store_address_id"
+                                 baseTableName="store"
+                                 constraintName="fk_store_store_address_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="store_address"/>
+
+        <addForeignKeyConstraint baseColumnNames="store_settings_id"
+                                 baseTableName="store"
+                                 constraintName="fk_store_store_settings_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="store_settings"/>
+
+        <addForeignKeyConstraint baseColumnNames="pre_order_settings_id"
+                                 baseTableName="store"
+                                 constraintName="fk_store_pre_order_settings_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="pre_order_settings"/>
+
+    </changeSet>
+</databaseChangeLog>

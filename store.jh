@@ -1,0 +1,118 @@
+
+entity Store{
+	idpCode String required,//regno
+	storeUniqueId String required,
+	name String required,
+	imageLink String required,//image
+    totalRating Double,
+    latLon String required,
+	locationName String,
+    contactNumber Long,
+    openingTime ZonedDateTime,
+    email String required,
+    closingTime ZonedDateTime,
+    info String,
+	minAmount Double,
+    maxDeliveryTime ZonedDateTime
+}
+
+entity StoreSettings{
+	deliveryCharge Double,
+	serviceCharge Double,
+	orderAcceptType String required,
+    isInventoryRequired Boolean,
+    isActive Boolean
+}
+
+entity PreOrderSettings{
+
+	isPreOrderAvailable Boolean,
+	fromTime ZonedDateTime,
+	toTime ZonedDateTime
+}
+
+entity Banner{
+
+    imageLink String
+}
+
+entity Propreitor{
+
+	name String
+}
+entity UserRating{
+    userName String required,
+    rating Double,
+    ratedOn ZonedDateTime
+}
+
+entity Review{
+	userName String required,
+	review String,
+    reviewedDate ZonedDateTime
+}
+entity Reply{
+	userName String required,
+	reply String,
+    repliedDate ZonedDateTime
+}
+
+entity StoreDeliveryInfo{
+	startingTime ZonedDateTime,
+	endTime ZonedDateTime
+}
+
+
+//Type Delivery Collection
+entity DeliveryType{
+	name String
+}
+
+//cusiness
+entity StoreType{
+	name String
+}
+entity StoreAddress{
+
+	postCode String,
+	houseNumber String,
+	street String,
+	city String,
+	state String,
+    country String,
+	landmark String
+
+}
+
+entity UniqueStoreID{
+}
+
+
+relationship OneToOne{
+    Store{propreitor} to Propreitor,
+	Store{storeAddress} to StoreAddress,
+	Store{storeSettings} to StoreSettings,
+	Store{preOrderSettings} to PreOrderSettings
+}
+
+
+relationship OneToMany{
+
+    Store{storeType} to StoreType,
+    Review{reply} to Reply,
+    Store{review} to Review,
+    Store{userRating} to UserRating,
+	Store{banner} to Banner,
+	Store{storeDeliveryInfo} to StoreDeliveryInfo
+}
+
+relationship ManyToOne{
+	 StoreDeliveryInfo{storeType} to StoreType
+}
+
+
+service all with serviceImpl
+
+dto all with mapstruct
+
+paginate all with pagination
