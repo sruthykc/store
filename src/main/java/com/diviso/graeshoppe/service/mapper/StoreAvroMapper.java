@@ -35,6 +35,7 @@ public interface StoreAvroMapper extends AvroMapper<com.diviso.graeshoppe.store.
 	@Mapping(source = "openingTime", target = "openingTime", qualifiedByName = "zonedDateTimeToLong")
 	@Mapping(source = "closingTime", target = "closingTime", qualifiedByName = "zonedDateTimeToLong")
 	@Mapping(source = "maxDeliveryTime", target = "maxDeliveryTime", qualifiedByName = "zonedDateTimeToLong")
+	  @Mapping(target = "image", ignore =true)
 	com.diviso.graeshoppe.store.avro.Store toAvro(StoreDTO storeDTO);
 	
 	
