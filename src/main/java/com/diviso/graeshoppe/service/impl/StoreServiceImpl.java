@@ -57,8 +57,8 @@ public class StoreServiceImpl implements StoreService {
 		StoreDTO result = storeMapper.toDto(store);
 
 		String status = "create";
-	//	com.diviso.graeshoppe.store.avro.Store message =storeAvroMapper.toAvro(result);
-		System.out.println("avro mapped#############################################"+result);
+	com.diviso.graeshoppe.store.avro.Store message =storeAvroMapper.toAvro(result);
+		System.out.println("avro mapped#############################################"+message);
 		
 		/*boolean publishstatus = createPublishMesssage(result, status);
 
