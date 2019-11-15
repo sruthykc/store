@@ -85,7 +85,7 @@
 		
 		{"name":"preOrderSettingsId",
 		"type":["null","long"],
-		"default": null},
+		"default": null}
 		
 		
 		]

@@ -1,18 +1,21 @@
 package com.diviso.graeshoppe.service.impl;
 
 import com.diviso.graeshoppe.service.StoreService;
+import com.diviso.graeshoppe.config.MessageBinderConfiguration;
 import com.diviso.graeshoppe.domain.Store;
 import com.diviso.graeshoppe.repository.StoreRepository;
 import com.diviso.graeshoppe.service.dto.StoreDTO;
+import com.diviso.graeshoppe.service.mapper.StoreAvroMapper;
 import com.diviso.graeshoppe.service.mapper.StoreMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
+import org.springframework.integration.support.MessageBuilder;
+import java.time.ZonedDateTime;
 import java.util.Optional;
 
 /**
@@ -23,14 +26,20 @@ import java.util.Optional;
 public class StoreServiceImpl implements StoreService {
 
 	private final Logger log = LoggerFactory.getLogger(StoreServiceImpl.class);
+	@Autowired
+	private MessageBinderConfiguration messageChannel;
 
 	private final StoreRepository storeRepository;
 
 	private final StoreMapper storeMapper;
+	
 
-	public StoreServiceImpl(StoreRepository storeRepository, StoreMapper storeMapper) {
+	private final StoreAvroMapper storeAvroMapper;
+
+	public StoreServiceImpl(StoreRepository storeRepository, StoreMapper storeMapper,StoreAvroMapper storeAvroMapper) {
 		this.storeRepository = storeRepository;
 		this.storeMapper = storeMapper;
+		this.storeAvroMapper = storeAvroMapper;
 	}
 
 	/**
@@ -48,26 +57,33 @@ public class StoreServiceImpl implements StoreService {
 		StoreDTO result = storeMapper.toDto(store);
 
 		String status = "create";
-
+		com.diviso.graeshoppe.store.avro.Store message =storeAvroMapper.toAvro(result);
+		System.out.println("avro mapped#############################################"+message);
+		
 		/*boolean publishstatus = createPublishMesssage(result, status);
 
 		log.debug("------------------------------------------published" + publishstatus);*/
+		
+	//	ZonedDateTime t = ZonedDateTime.now();
+		//t.getZone();
+		
+		
 		return result;
 
 	}
-/*public boolean createPublishMesssage(com.diviso.graeshoppe.domain.Customer customer, String status) {
+public boolean createPublishMesssage(StoreDTO storeDTO, String status) {
 		
         log.debug("------------------------------------------publish method"+status);
 
-		com.diviso.graeshoppe.avro.CustomerInfo message =customerAvroMapper.toAvro(customer);
+		com.diviso.graeshoppe.store.avro.Store message =storeAvroMapper.toAvro(storeDTO);
 		message .setStatus(status);
 
 		System.out.println("avro mapped#############################################"+message);
 
-		return messageChannel.customerOut().send(MessageBuilder.withPayload(message).build());
+		return messageChannel.storeOut().send(MessageBuilder.withPayload(message).build());
 		
 
-	}*/
+	}
 	
 	
 	
