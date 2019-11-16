@@ -5,7 +5,7 @@
 	"type":"record",
 	"name":"Store",
 	"fields":[
-		{"name":"id",
+		{"name":"storeCode",
 		"type":["null","long"]},
 		
 		{"name":"idpCode",

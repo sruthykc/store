@@ -32,11 +32,10 @@ public class StoreServiceImpl implements StoreService {
 	private final StoreRepository storeRepository;
 
 	private final StoreMapper storeMapper;
-	
 
 	private final StoreAvroMapper storeAvroMapper;
 
-	public StoreServiceImpl(StoreRepository storeRepository, StoreMapper storeMapper,StoreAvroMapper storeAvroMapper) {
+	public StoreServiceImpl(StoreRepository storeRepository, StoreMapper storeMapper, StoreAvroMapper storeAvroMapper) {
 		this.storeRepository = storeRepository;
 		this.storeMapper = storeMapper;
 		this.storeAvroMapper = storeAvroMapper;
@@ -57,43 +56,36 @@ public class StoreServiceImpl implements StoreService {
 		StoreDTO result = storeMapper.toDto(store);
 
 		String status = "create";
-/*	com.diviso.graeshoppe.store.avro.Store message =storeAvroMapper.toAvro(result);
-		System.out.println("avro mapped#############################################"+message);
-		*/
+		/*
+		 * com.diviso.graeshoppe.store.avro.Store message
+		 * =storeAvroMapper.toAvro(result);
+		 * System.out.println("avro mapped#############################################"
+		 * +message);
+		 */
 		boolean publishstatus = createPublishMesssage(result, status);
 
 		log.debug("------------------------------------------published" + publishstatus);
-		
-	//	ZonedDateTime t = ZonedDateTime.now();
-		//t.getZone();
-		
-		
+
+		// ZonedDateTime t = ZonedDateTime.now();
+		// t.getZone();
+
 		return result;
 
 	}
-public boolean createPublishMesssage(StoreDTO storeDTO, String status) {
-		
-        log.debug("------------------------------------------publish method"+status);
 
-		com.diviso.graeshoppe.store.avro.Store message =storeAvroMapper.toAvro(storeDTO);
-		message .setStatus(status);
+	public boolean createPublishMesssage(StoreDTO storeDTO, String status) {
 
-		System.out.println("avro mapped*******************************************"+message);
+		log.debug("------------------------------------------publish method" + status);
+
+		com.diviso.graeshoppe.store.avro.Store message = storeAvroMapper.toAvro(storeDTO);
+		message.setStatus(status);
+
+		System.out.println("avro mapped*******************************************" + message);
 
 		return messageChannel.storeOut().send(MessageBuilder.withPayload(message).build());
-		
 
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	/**
 	 * Get all the stores.
 	 *
