@@ -56,14 +56,17 @@ public class StoreServiceImpl implements StoreService {
 		StoreDTO result = storeMapper.toDto(store);
 
 		String status = "create";
-		String zoneId = result.getOpeningTime().getZone().toString(); 
-		/*
+		int zoneId = result.getOpeningTime().getOffset().getTotalSeconds(); 
+		
+		System.out.println("offset second##5555555555555555555555##########" +result.getOpeningTime().getOffset().toString());
+		System.out.println("offset second##666666666666666666666666666666##########" +zoneId);
+		/*result.getOpeningTime().
 		 * com.diviso.graeshoppe.store.avro.Store message
 		 * =storeAvroMapper.toAvro(result);
 		 * System.out.println("avro mapped#############################################"
 		 * +message);
 		 */
-		boolean publishstatus = createPublishMesssage(result, status,zoneId);
+		boolean publishstatus = createPublishMesssage(result, status/*,zoneId*/);
 
 		log.debug("------------------------------------------published" + publishstatus);
 
@@ -74,13 +77,13 @@ public class StoreServiceImpl implements StoreService {
 
 	}
 
-	public boolean createPublishMesssage(StoreDTO storeDTO, String status,String ZoneId) {
+	public boolean createPublishMesssage(StoreDTO storeDTO, String status/*,int zoneId*/) {
 
 		log.debug("------------------------------------------publish method" + status);
 
 		com.diviso.graeshoppe.store.avro.Store message = storeAvroMapper.toAvro(storeDTO);
 		message.setStatus(status);
-
+		//message.setZoneId(zoneId);
 		System.out.println("avro mapped*******************************************" + message);
 
 		return messageChannel.storeOut().send(MessageBuilder.withPayload(message).build());
