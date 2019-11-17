@@ -49,6 +49,10 @@
 		"type":"long",
 		"logicalType":"date"},
 		
+		{"name":"zoneId",
+		"type":["null","string"],
+		"default": null},
+		
 		{"name":"email",
 		"type":["null","string"],
 		"default": null},

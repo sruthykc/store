@@ -13,8 +13,8 @@ import org.apache.avro.message.SchemaStore;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class Store extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 5293450422614794262L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Store\",\"namespace\":\"com.diviso.graeshoppe.store.avro\",\"fields\":[{\"name\":\"id\",\"type\":[\"null\",\"long\"]},{\"name\":\"idpCode\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}]},{\"name\":\"storeUniqueId\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}]},{\"name\":\"status\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}]},{\"name\":\"image\",\"type\":[\"null\",\"bytes\"],\"default\":\"ÿ\"},{\"name\":\"name\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}]},{\"name\":\"imageLink\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"totalRating\",\"type\":[\"null\",\"double\"],\"default\":0.0},{\"name\":\"latLon\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}]},{\"name\":\"locationName\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"cotactNumber\",\"type\":[\"null\",\"long\"],\"default\":null},{\"name\":\"openingTime\",\"type\":\"long\",\"logicalType\":\"date\"},{\"name\":\"email\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"closingTime\",\"type\":\"long\",\"logicalType\":\"date\"},{\"name\":\"info\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"minAmount\",\"type\":[\"null\",\"double\"],\"default\":0.0},{\"name\":\"maxDeliveryTime\",\"type\":\"long\",\"logicalType\":\"date\"},{\"name\":\"propreitorId\",\"type\":[\"null\",\"long\"],\"default\":null},{\"name\":\"storeAddressId\",\"type\":[\"null\",\"long\"],\"default\":null},{\"name\":\"storeSettingsId\",\"type\":[\"null\",\"long\"],\"default\":null},{\"name\":\"preOrderSettingsId\",\"type\":[\"null\",\"long\"],\"default\":null}]}");
+  private static final long serialVersionUID = -5291417037317838728L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Store\",\"namespace\":\"com.diviso.graeshoppe.store.avro\",\"fields\":[{\"name\":\"storeCode\",\"type\":[\"null\",\"long\"]},{\"name\":\"idpCode\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}]},{\"name\":\"storeUniqueId\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}]},{\"name\":\"status\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}]},{\"name\":\"image\",\"type\":[\"null\",\"bytes\"],\"default\":\"ÿ\"},{\"name\":\"name\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}]},{\"name\":\"imageLink\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"totalRating\",\"type\":[\"null\",\"double\"],\"default\":0.0},{\"name\":\"latLon\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}]},{\"name\":\"locationName\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"cotactNumber\",\"type\":[\"null\",\"long\"],\"default\":null},{\"name\":\"openingTime\",\"type\":\"long\",\"logicalType\":\"date\"},{\"name\":\"zoneId\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"email\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"closingTime\",\"type\":\"long\",\"logicalType\":\"date\"},{\"name\":\"info\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"minAmount\",\"type\":[\"null\",\"double\"],\"default\":0.0},{\"name\":\"maxDeliveryTime\",\"type\":\"long\",\"logicalType\":\"date\"},{\"name\":\"propreitorId\",\"type\":[\"null\",\"long\"],\"default\":null},{\"name\":\"storeAddressId\",\"type\":[\"null\",\"long\"],\"default\":null},{\"name\":\"storeSettingsId\",\"type\":[\"null\",\"long\"],\"default\":null},{\"name\":\"preOrderSettingsId\",\"type\":[\"null\",\"long\"],\"default\":null}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -51,7 +51,7 @@ public class Store extends org.apache.avro.specific.SpecificRecordBase implement
     return DECODER.decode(b);
   }
 
-  @Deprecated public java.lang.Long id;
+  @Deprecated public java.lang.Long storeCode;
   @Deprecated public java.lang.String idpCode;
   @Deprecated public java.lang.String storeUniqueId;
   @Deprecated public java.lang.String status;
@@ -63,6 +63,7 @@ public class Store extends org.apache.avro.specific.SpecificRecordBase implement
   @Deprecated public java.lang.String locationName;
   @Deprecated public java.lang.Long cotactNumber;
   @Deprecated public long openingTime;
+  @Deprecated public java.lang.String zoneId;
   @Deprecated public java.lang.String email;
   @Deprecated public long closingTime;
   @Deprecated public java.lang.String info;
@@ -82,7 +83,7 @@ public class Store extends org.apache.avro.specific.SpecificRecordBase implement
 
   /**
    * All-args constructor.
-   * @param id The new value for id
+   * @param storeCode The new value for storeCode
    * @param idpCode The new value for idpCode
    * @param storeUniqueId The new value for storeUniqueId
    * @param status The new value for status
@@ -94,6 +95,7 @@ public class Store extends org.apache.avro.specific.SpecificRecordBase implement
    * @param locationName The new value for locationName
    * @param cotactNumber The new value for cotactNumber
    * @param openingTime The new value for openingTime
+   * @param zoneId The new value for zoneId
    * @param email The new value for email
    * @param closingTime The new value for closingTime
    * @param info The new value for info
@@ -104,8 +106,8 @@ public class Store extends org.apache.avro.specific.SpecificRecordBase implement
    * @param storeSettingsId The new value for storeSettingsId
    * @param preOrderSettingsId The new value for preOrderSettingsId
    */
-  public Store(java.lang.Long id, java.lang.String idpCode, java.lang.String storeUniqueId, java.lang.String status, java.nio.ByteBuffer image, java.lang.String name, java.lang.String imageLink, java.lang.Double totalRating, java.lang.String latLon, java.lang.String locationName, java.lang.Long cotactNumber, java.lang.Long openingTime, java.lang.String email, java.lang.Long closingTime, java.lang.String info, java.lang.Double minAmount, java.lang.Long maxDeliveryTime, java.lang.Long propreitorId, java.lang.Long storeAddressId, java.lang.Long storeSettingsId, java.lang.Long preOrderSettingsId) {
-    this.id = id;
+  public Store(java.lang.Long storeCode, java.lang.String idpCode, java.lang.String storeUniqueId, java.lang.String status, java.nio.ByteBuffer image, java.lang.String name, java.lang.String imageLink, java.lang.Double totalRating, java.lang.String latLon, java.lang.String locationName, java.lang.Long cotactNumber, java.lang.Long openingTime, java.lang.String zoneId, java.lang.String email, java.lang.Long closingTime, java.lang.String info, java.lang.Double minAmount, java.lang.Long maxDeliveryTime, java.lang.Long propreitorId, java.lang.Long storeAddressId, java.lang.Long storeSettingsId, java.lang.Long preOrderSettingsId) {
+    this.storeCode = storeCode;
     this.idpCode = idpCode;
     this.storeUniqueId = storeUniqueId;
     this.status = status;
@@ -117,6 +119,7 @@ public class Store extends org.apache.avro.specific.SpecificRecordBase implement
     this.locationName = locationName;
     this.cotactNumber = cotactNumber;
     this.openingTime = openingTime;
+    this.zoneId = zoneId;
     this.email = email;
     this.closingTime = closingTime;
     this.info = info;
@@ -132,7 +135,7 @@ public class Store extends org.apache.avro.specific.SpecificRecordBase implement
   // Used by DatumWriter.  Applications should not call.
   public java.lang.Object get(int field$) {
     switch (field$) {
-    case 0: return id;
+    case 0: return storeCode;
     case 1: return idpCode;
     case 2: return storeUniqueId;
     case 3: return status;
@@ -144,15 +147,16 @@ public class Store extends org.apache.avro.specific.SpecificRecordBase implement
     case 9: return locationName;
     case 10: return cotactNumber;
     case 11: return openingTime;
-    case 12: return email;
-    case 13: return closingTime;
-    case 14: return info;
-    case 15: return minAmount;
-    case 16: return maxDeliveryTime;
-    case 17: return propreitorId;
-    case 18: return storeAddressId;
-    case 19: return storeSettingsId;
-    case 20: return preOrderSettingsId;
+    case 12: return zoneId;
+    case 13: return email;
+    case 14: return closingTime;
+    case 15: return info;
+    case 16: return minAmount;
+    case 17: return maxDeliveryTime;
+    case 18: return propreitorId;
+    case 19: return storeAddressId;
+    case 20: return storeSettingsId;
+    case 21: return preOrderSettingsId;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -161,7 +165,7 @@ public class Store extends org.apache.avro.specific.SpecificRecordBase implement
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: id = (java.lang.Long)value$; break;
+    case 0: storeCode = (java.lang.Long)value$; break;
     case 1: idpCode = (java.lang.String)value$; break;
     case 2: storeUniqueId = (java.lang.String)value$; break;
     case 3: status = (java.lang.String)value$; break;
@@ -173,33 +177,34 @@ public class Store extends org.apache.avro.specific.SpecificRecordBase implement
     case 9: locationName = (java.lang.String)value$; break;
     case 10: cotactNumber = (java.lang.Long)value$; break;
     case 11: openingTime = (java.lang.Long)value$; break;
-    case 12: email = (java.lang.String)value$; break;
-    case 13: closingTime = (java.lang.Long)value$; break;
-    case 14: info = (java.lang.String)value$; break;
-    case 15: minAmount = (java.lang.Double)value$; break;
-    case 16: maxDeliveryTime = (java.lang.Long)value$; break;
-    case 17: propreitorId = (java.lang.Long)value$; break;
-    case 18: storeAddressId = (java.lang.Long)value$; break;
-    case 19: storeSettingsId = (java.lang.Long)value$; break;
-    case 20: preOrderSettingsId = (java.lang.Long)value$; break;
+    case 12: zoneId = (java.lang.String)value$; break;
+    case 13: email = (java.lang.String)value$; break;
+    case 14: closingTime = (java.lang.Long)value$; break;
+    case 15: info = (java.lang.String)value$; break;
+    case 16: minAmount = (java.lang.Double)value$; break;
+    case 17: maxDeliveryTime = (java.lang.Long)value$; break;
+    case 18: propreitorId = (java.lang.Long)value$; break;
+    case 19: storeAddressId = (java.lang.Long)value$; break;
+    case 20: storeSettingsId = (java.lang.Long)value$; break;
+    case 21: preOrderSettingsId = (java.lang.Long)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
 
   /**
-   * Gets the value of the 'id' field.
-   * @return The value of the 'id' field.
+   * Gets the value of the 'storeCode' field.
+   * @return The value of the 'storeCode' field.
    */
-  public java.lang.Long getId() {
-    return id;
+  public java.lang.Long getStoreCode() {
+    return storeCode;
   }
 
   /**
-   * Sets the value of the 'id' field.
+   * Sets the value of the 'storeCode' field.
    * @param value the value to set.
    */
-  public void setId(java.lang.Long value) {
-    this.id = value;
+  public void setStoreCode(java.lang.Long value) {
+    this.storeCode = value;
   }
 
   /**
@@ -379,6 +384,22 @@ public class Store extends org.apache.avro.specific.SpecificRecordBase implement
   }
 
   /**
+   * Gets the value of the 'zoneId' field.
+   * @return The value of the 'zoneId' field.
+   */
+  public java.lang.String getZoneId() {
+    return zoneId;
+  }
+
+  /**
+   * Sets the value of the 'zoneId' field.
+   * @param value the value to set.
+   */
+  public void setZoneId(java.lang.String value) {
+    this.zoneId = value;
+  }
+
+  /**
    * Gets the value of the 'email' field.
    * @return The value of the 'email' field.
    */
@@ -554,7 +575,7 @@ public class Store extends org.apache.avro.specific.SpecificRecordBase implement
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<Store>
     implements org.apache.avro.data.RecordBuilder<Store> {
 
-    private java.lang.Long id;
+    private java.lang.Long storeCode;
     private java.lang.String idpCode;
     private java.lang.String storeUniqueId;
     private java.lang.String status;
@@ -566,6 +587,7 @@ public class Store extends org.apache.avro.specific.SpecificRecordBase implement
     private java.lang.String locationName;
     private java.lang.Long cotactNumber;
     private long openingTime;
+    private java.lang.String zoneId;
     private java.lang.String email;
     private long closingTime;
     private java.lang.String info;
@@ -587,8 +609,8 @@ public class Store extends org.apache.avro.specific.SpecificRecordBase implement
      */
     private Builder(com.diviso.graeshoppe.store.avro.Store.Builder other) {
       super(other);
-      if (isValidValue(fields()[0], other.id)) {
-        this.id = data().deepCopy(fields()[0].schema(), other.id);
+      if (isValidValue(fields()[0], other.storeCode)) {
+        this.storeCode = data().deepCopy(fields()[0].schema(), other.storeCode);
         fieldSetFlags()[0] = true;
       }
       if (isValidValue(fields()[1], other.idpCode)) {
@@ -635,41 +657,45 @@ public class Store extends org.apache.avro.specific.SpecificRecordBase implement
         this.openingTime = data().deepCopy(fields()[11].schema(), other.openingTime);
         fieldSetFlags()[11] = true;
       }
-      if (isValidValue(fields()[12], other.email)) {
-        this.email = data().deepCopy(fields()[12].schema(), other.email);
+      if (isValidValue(fields()[12], other.zoneId)) {
+        this.zoneId = data().deepCopy(fields()[12].schema(), other.zoneId);
         fieldSetFlags()[12] = true;
       }
-      if (isValidValue(fields()[13], other.closingTime)) {
-        this.closingTime = data().deepCopy(fields()[13].schema(), other.closingTime);
+      if (isValidValue(fields()[13], other.email)) {
+        this.email = data().deepCopy(fields()[13].schema(), other.email);
         fieldSetFlags()[13] = true;
       }
-      if (isValidValue(fields()[14], other.info)) {
-        this.info = data().deepCopy(fields()[14].schema(), other.info);
+      if (isValidValue(fields()[14], other.closingTime)) {
+        this.closingTime = data().deepCopy(fields()[14].schema(), other.closingTime);
         fieldSetFlags()[14] = true;
       }
-      if (isValidValue(fields()[15], other.minAmount)) {
-        this.minAmount = data().deepCopy(fields()[15].schema(), other.minAmount);
+      if (isValidValue(fields()[15], other.info)) {
+        this.info = data().deepCopy(fields()[15].schema(), other.info);
         fieldSetFlags()[15] = true;
       }
-      if (isValidValue(fields()[16], other.maxDeliveryTime)) {
-        this.maxDeliveryTime = data().deepCopy(fields()[16].schema(), other.maxDeliveryTime);
+      if (isValidValue(fields()[16], other.minAmount)) {
+        this.minAmount = data().deepCopy(fields()[16].schema(), other.minAmount);
         fieldSetFlags()[16] = true;
       }
-      if (isValidValue(fields()[17], other.propreitorId)) {
-        this.propreitorId = data().deepCopy(fields()[17].schema(), other.propreitorId);
+      if (isValidValue(fields()[17], other.maxDeliveryTime)) {
+        this.maxDeliveryTime = data().deepCopy(fields()[17].schema(), other.maxDeliveryTime);
         fieldSetFlags()[17] = true;
       }
-      if (isValidValue(fields()[18], other.storeAddressId)) {
-        this.storeAddressId = data().deepCopy(fields()[18].schema(), other.storeAddressId);
+      if (isValidValue(fields()[18], other.propreitorId)) {
+        this.propreitorId = data().deepCopy(fields()[18].schema(), other.propreitorId);
         fieldSetFlags()[18] = true;
       }
-      if (isValidValue(fields()[19], other.storeSettingsId)) {
-        this.storeSettingsId = data().deepCopy(fields()[19].schema(), other.storeSettingsId);
+      if (isValidValue(fields()[19], other.storeAddressId)) {
+        this.storeAddressId = data().deepCopy(fields()[19].schema(), other.storeAddressId);
         fieldSetFlags()[19] = true;
       }
-      if (isValidValue(fields()[20], other.preOrderSettingsId)) {
-        this.preOrderSettingsId = data().deepCopy(fields()[20].schema(), other.preOrderSettingsId);
+      if (isValidValue(fields()[20], other.storeSettingsId)) {
+        this.storeSettingsId = data().deepCopy(fields()[20].schema(), other.storeSettingsId);
         fieldSetFlags()[20] = true;
+      }
+      if (isValidValue(fields()[21], other.preOrderSettingsId)) {
+        this.preOrderSettingsId = data().deepCopy(fields()[21].schema(), other.preOrderSettingsId);
+        fieldSetFlags()[21] = true;
       }
     }
 
@@ -679,8 +705,8 @@ public class Store extends org.apache.avro.specific.SpecificRecordBase implement
      */
     private Builder(com.diviso.graeshoppe.store.avro.Store other) {
             super(SCHEMA$);
-      if (isValidValue(fields()[0], other.id)) {
-        this.id = data().deepCopy(fields()[0].schema(), other.id);
+      if (isValidValue(fields()[0], other.storeCode)) {
+        this.storeCode = data().deepCopy(fields()[0].schema(), other.storeCode);
         fieldSetFlags()[0] = true;
       }
       if (isValidValue(fields()[1], other.idpCode)) {
@@ -727,79 +753,83 @@ public class Store extends org.apache.avro.specific.SpecificRecordBase implement
         this.openingTime = data().deepCopy(fields()[11].schema(), other.openingTime);
         fieldSetFlags()[11] = true;
       }
-      if (isValidValue(fields()[12], other.email)) {
-        this.email = data().deepCopy(fields()[12].schema(), other.email);
+      if (isValidValue(fields()[12], other.zoneId)) {
+        this.zoneId = data().deepCopy(fields()[12].schema(), other.zoneId);
         fieldSetFlags()[12] = true;
       }
-      if (isValidValue(fields()[13], other.closingTime)) {
-        this.closingTime = data().deepCopy(fields()[13].schema(), other.closingTime);
+      if (isValidValue(fields()[13], other.email)) {
+        this.email = data().deepCopy(fields()[13].schema(), other.email);
         fieldSetFlags()[13] = true;
       }
-      if (isValidValue(fields()[14], other.info)) {
-        this.info = data().deepCopy(fields()[14].schema(), other.info);
+      if (isValidValue(fields()[14], other.closingTime)) {
+        this.closingTime = data().deepCopy(fields()[14].schema(), other.closingTime);
         fieldSetFlags()[14] = true;
       }
-      if (isValidValue(fields()[15], other.minAmount)) {
-        this.minAmount = data().deepCopy(fields()[15].schema(), other.minAmount);
+      if (isValidValue(fields()[15], other.info)) {
+        this.info = data().deepCopy(fields()[15].schema(), other.info);
         fieldSetFlags()[15] = true;
       }
-      if (isValidValue(fields()[16], other.maxDeliveryTime)) {
-        this.maxDeliveryTime = data().deepCopy(fields()[16].schema(), other.maxDeliveryTime);
+      if (isValidValue(fields()[16], other.minAmount)) {
+        this.minAmount = data().deepCopy(fields()[16].schema(), other.minAmount);
         fieldSetFlags()[16] = true;
       }
-      if (isValidValue(fields()[17], other.propreitorId)) {
-        this.propreitorId = data().deepCopy(fields()[17].schema(), other.propreitorId);
+      if (isValidValue(fields()[17], other.maxDeliveryTime)) {
+        this.maxDeliveryTime = data().deepCopy(fields()[17].schema(), other.maxDeliveryTime);
         fieldSetFlags()[17] = true;
       }
-      if (isValidValue(fields()[18], other.storeAddressId)) {
-        this.storeAddressId = data().deepCopy(fields()[18].schema(), other.storeAddressId);
+      if (isValidValue(fields()[18], other.propreitorId)) {
+        this.propreitorId = data().deepCopy(fields()[18].schema(), other.propreitorId);
         fieldSetFlags()[18] = true;
       }
-      if (isValidValue(fields()[19], other.storeSettingsId)) {
-        this.storeSettingsId = data().deepCopy(fields()[19].schema(), other.storeSettingsId);
+      if (isValidValue(fields()[19], other.storeAddressId)) {
+        this.storeAddressId = data().deepCopy(fields()[19].schema(), other.storeAddressId);
         fieldSetFlags()[19] = true;
       }
-      if (isValidValue(fields()[20], other.preOrderSettingsId)) {
-        this.preOrderSettingsId = data().deepCopy(fields()[20].schema(), other.preOrderSettingsId);
+      if (isValidValue(fields()[20], other.storeSettingsId)) {
+        this.storeSettingsId = data().deepCopy(fields()[20].schema(), other.storeSettingsId);
         fieldSetFlags()[20] = true;
+      }
+      if (isValidValue(fields()[21], other.preOrderSettingsId)) {
+        this.preOrderSettingsId = data().deepCopy(fields()[21].schema(), other.preOrderSettingsId);
+        fieldSetFlags()[21] = true;
       }
     }
 
     /**
-      * Gets the value of the 'id' field.
+      * Gets the value of the 'storeCode' field.
       * @return The value.
       */
-    public java.lang.Long getId() {
-      return id;
+    public java.lang.Long getStoreCode() {
+      return storeCode;
     }
 
     /**
-      * Sets the value of the 'id' field.
-      * @param value The value of 'id'.
+      * Sets the value of the 'storeCode' field.
+      * @param value The value of 'storeCode'.
       * @return This builder.
       */
-    public com.diviso.graeshoppe.store.avro.Store.Builder setId(java.lang.Long value) {
+    public com.diviso.graeshoppe.store.avro.Store.Builder setStoreCode(java.lang.Long value) {
       validate(fields()[0], value);
-      this.id = value;
+      this.storeCode = value;
       fieldSetFlags()[0] = true;
       return this;
     }
 
     /**
-      * Checks whether the 'id' field has been set.
-      * @return True if the 'id' field has been set, false otherwise.
+      * Checks whether the 'storeCode' field has been set.
+      * @return True if the 'storeCode' field has been set, false otherwise.
       */
-    public boolean hasId() {
+    public boolean hasStoreCode() {
       return fieldSetFlags()[0];
     }
 
 
     /**
-      * Clears the value of the 'id' field.
+      * Clears the value of the 'storeCode' field.
       * @return This builder.
       */
-    public com.diviso.graeshoppe.store.avro.Store.Builder clearId() {
-      id = null;
+    public com.diviso.graeshoppe.store.avro.Store.Builder clearStoreCode() {
+      storeCode = null;
       fieldSetFlags()[0] = false;
       return this;
     }
@@ -1233,6 +1263,45 @@ public class Store extends org.apache.avro.specific.SpecificRecordBase implement
     }
 
     /**
+      * Gets the value of the 'zoneId' field.
+      * @return The value.
+      */
+    public java.lang.String getZoneId() {
+      return zoneId;
+    }
+
+    /**
+      * Sets the value of the 'zoneId' field.
+      * @param value The value of 'zoneId'.
+      * @return This builder.
+      */
+    public com.diviso.graeshoppe.store.avro.Store.Builder setZoneId(java.lang.String value) {
+      validate(fields()[12], value);
+      this.zoneId = value;
+      fieldSetFlags()[12] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'zoneId' field has been set.
+      * @return True if the 'zoneId' field has been set, false otherwise.
+      */
+    public boolean hasZoneId() {
+      return fieldSetFlags()[12];
+    }
+
+
+    /**
+      * Clears the value of the 'zoneId' field.
+      * @return This builder.
+      */
+    public com.diviso.graeshoppe.store.avro.Store.Builder clearZoneId() {
+      zoneId = null;
+      fieldSetFlags()[12] = false;
+      return this;
+    }
+
+    /**
       * Gets the value of the 'email' field.
       * @return The value.
       */
@@ -1246,9 +1315,9 @@ public class Store extends org.apache.avro.specific.SpecificRecordBase implement
       * @return This builder.
       */
     public com.diviso.graeshoppe.store.avro.Store.Builder setEmail(java.lang.String value) {
-      validate(fields()[12], value);
+      validate(fields()[13], value);
       this.email = value;
-      fieldSetFlags()[12] = true;
+      fieldSetFlags()[13] = true;
       return this;
     }
 
@@ -1257,7 +1326,7 @@ public class Store extends org.apache.avro.specific.SpecificRecordBase implement
       * @return True if the 'email' field has been set, false otherwise.
       */
     public boolean hasEmail() {
-      return fieldSetFlags()[12];
+      return fieldSetFlags()[13];
     }
 
 
@@ -1267,7 +1336,7 @@ public class Store extends org.apache.avro.specific.SpecificRecordBase implement
       */
     public com.diviso.graeshoppe.store.avro.Store.Builder clearEmail() {
       email = null;
-      fieldSetFlags()[12] = false;
+      fieldSetFlags()[13] = false;
       return this;
     }
 
@@ -1285,9 +1354,9 @@ public class Store extends org.apache.avro.specific.SpecificRecordBase implement
       * @return This builder.
       */
     public com.diviso.graeshoppe.store.avro.Store.Builder setClosingTime(long value) {
-      validate(fields()[13], value);
+      validate(fields()[14], value);
       this.closingTime = value;
-      fieldSetFlags()[13] = true;
+      fieldSetFlags()[14] = true;
       return this;
     }
 
@@ -1296,7 +1365,7 @@ public class Store extends org.apache.avro.specific.SpecificRecordBase implement
       * @return True if the 'closingTime' field has been set, false otherwise.
       */
     public boolean hasClosingTime() {
-      return fieldSetFlags()[13];
+      return fieldSetFlags()[14];
     }
 
 
@@ -1305,7 +1374,7 @@ public class Store extends org.apache.avro.specific.SpecificRecordBase implement
       * @return This builder.
       */
     public com.diviso.graeshoppe.store.avro.Store.Builder clearClosingTime() {
-      fieldSetFlags()[13] = false;
+      fieldSetFlags()[14] = false;
       return this;
     }
 
@@ -1323,9 +1392,9 @@ public class Store extends org.apache.avro.specific.SpecificRecordBase implement
       * @return This builder.
       */
     public com.diviso.graeshoppe.store.avro.Store.Builder setInfo(java.lang.String value) {
-      validate(fields()[14], value);
+      validate(fields()[15], value);
       this.info = value;
-      fieldSetFlags()[14] = true;
+      fieldSetFlags()[15] = true;
       return this;
     }
 
@@ -1334,7 +1403,7 @@ public class Store extends org.apache.avro.specific.SpecificRecordBase implement
       * @return True if the 'info' field has been set, false otherwise.
       */
     public boolean hasInfo() {
-      return fieldSetFlags()[14];
+      return fieldSetFlags()[15];
     }
 
 
@@ -1344,7 +1413,7 @@ public class Store extends org.apache.avro.specific.SpecificRecordBase implement
       */
     public com.diviso.graeshoppe.store.avro.Store.Builder clearInfo() {
       info = null;
-      fieldSetFlags()[14] = false;
+      fieldSetFlags()[15] = false;
       return this;
     }
 
@@ -1362,9 +1431,9 @@ public class Store extends org.apache.avro.specific.SpecificRecordBase implement
       * @return This builder.
       */
     public com.diviso.graeshoppe.store.avro.Store.Builder setMinAmount(java.lang.Double value) {
-      validate(fields()[15], value);
+      validate(fields()[16], value);
       this.minAmount = value;
-      fieldSetFlags()[15] = true;
+      fieldSetFlags()[16] = true;
       return this;
     }
 
@@ -1373,7 +1442,7 @@ public class Store extends org.apache.avro.specific.SpecificRecordBase implement
       * @return True if the 'minAmount' field has been set, false otherwise.
       */
     public boolean hasMinAmount() {
-      return fieldSetFlags()[15];
+      return fieldSetFlags()[16];
     }
 
 
@@ -1383,7 +1452,7 @@ public class Store extends org.apache.avro.specific.SpecificRecordBase implement
       */
     public com.diviso.graeshoppe.store.avro.Store.Builder clearMinAmount() {
       minAmount = null;
-      fieldSetFlags()[15] = false;
+      fieldSetFlags()[16] = false;
       return this;
     }
 
@@ -1401,9 +1470,9 @@ public class Store extends org.apache.avro.specific.SpecificRecordBase implement
       * @return This builder.
       */
     public com.diviso.graeshoppe.store.avro.Store.Builder setMaxDeliveryTime(long value) {
-      validate(fields()[16], value);
+      validate(fields()[17], value);
       this.maxDeliveryTime = value;
-      fieldSetFlags()[16] = true;
+      fieldSetFlags()[17] = true;
       return this;
     }
 
@@ -1412,7 +1481,7 @@ public class Store extends org.apache.avro.specific.SpecificRecordBase implement
       * @return True if the 'maxDeliveryTime' field has been set, false otherwise.
       */
     public boolean hasMaxDeliveryTime() {
-      return fieldSetFlags()[16];
+      return fieldSetFlags()[17];
     }
 
 
@@ -1421,7 +1490,7 @@ public class Store extends org.apache.avro.specific.SpecificRecordBase implement
       * @return This builder.
       */
     public com.diviso.graeshoppe.store.avro.Store.Builder clearMaxDeliveryTime() {
-      fieldSetFlags()[16] = false;
+      fieldSetFlags()[17] = false;
       return this;
     }
 
@@ -1439,9 +1508,9 @@ public class Store extends org.apache.avro.specific.SpecificRecordBase implement
       * @return This builder.
       */
     public com.diviso.graeshoppe.store.avro.Store.Builder setPropreitorId(java.lang.Long value) {
-      validate(fields()[17], value);
+      validate(fields()[18], value);
       this.propreitorId = value;
-      fieldSetFlags()[17] = true;
+      fieldSetFlags()[18] = true;
       return this;
     }
 
@@ -1450,7 +1519,7 @@ public class Store extends org.apache.avro.specific.SpecificRecordBase implement
       * @return True if the 'propreitorId' field has been set, false otherwise.
       */
     public boolean hasPropreitorId() {
-      return fieldSetFlags()[17];
+      return fieldSetFlags()[18];
     }
 
 
@@ -1460,7 +1529,7 @@ public class Store extends org.apache.avro.specific.SpecificRecordBase implement
       */
     public com.diviso.graeshoppe.store.avro.Store.Builder clearPropreitorId() {
       propreitorId = null;
-      fieldSetFlags()[17] = false;
+      fieldSetFlags()[18] = false;
       return this;
     }
 
@@ -1478,9 +1547,9 @@ public class Store extends org.apache.avro.specific.SpecificRecordBase implement
       * @return This builder.
       */
     public com.diviso.graeshoppe.store.avro.Store.Builder setStoreAddressId(java.lang.Long value) {
-      validate(fields()[18], value);
+      validate(fields()[19], value);
       this.storeAddressId = value;
-      fieldSetFlags()[18] = true;
+      fieldSetFlags()[19] = true;
       return this;
     }
 
@@ -1489,7 +1558,7 @@ public class Store extends org.apache.avro.specific.SpecificRecordBase implement
       * @return True if the 'storeAddressId' field has been set, false otherwise.
       */
     public boolean hasStoreAddressId() {
-      return fieldSetFlags()[18];
+      return fieldSetFlags()[19];
     }
 
 
@@ -1499,7 +1568,7 @@ public class Store extends org.apache.avro.specific.SpecificRecordBase implement
       */
     public com.diviso.graeshoppe.store.avro.Store.Builder clearStoreAddressId() {
       storeAddressId = null;
-      fieldSetFlags()[18] = false;
+      fieldSetFlags()[19] = false;
       return this;
     }
 
@@ -1517,9 +1586,9 @@ public class Store extends org.apache.avro.specific.SpecificRecordBase implement
       * @return This builder.
       */
     public com.diviso.graeshoppe.store.avro.Store.Builder setStoreSettingsId(java.lang.Long value) {
-      validate(fields()[19], value);
+      validate(fields()[20], value);
       this.storeSettingsId = value;
-      fieldSetFlags()[19] = true;
+      fieldSetFlags()[20] = true;
       return this;
     }
 
@@ -1528,7 +1597,7 @@ public class Store extends org.apache.avro.specific.SpecificRecordBase implement
       * @return True if the 'storeSettingsId' field has been set, false otherwise.
       */
     public boolean hasStoreSettingsId() {
-      return fieldSetFlags()[19];
+      return fieldSetFlags()[20];
     }
 
 
@@ -1538,7 +1607,7 @@ public class Store extends org.apache.avro.specific.SpecificRecordBase implement
       */
     public com.diviso.graeshoppe.store.avro.Store.Builder clearStoreSettingsId() {
       storeSettingsId = null;
-      fieldSetFlags()[19] = false;
+      fieldSetFlags()[20] = false;
       return this;
     }
 
@@ -1556,9 +1625,9 @@ public class Store extends org.apache.avro.specific.SpecificRecordBase implement
       * @return This builder.
       */
     public com.diviso.graeshoppe.store.avro.Store.Builder setPreOrderSettingsId(java.lang.Long value) {
-      validate(fields()[20], value);
+      validate(fields()[21], value);
       this.preOrderSettingsId = value;
-      fieldSetFlags()[20] = true;
+      fieldSetFlags()[21] = true;
       return this;
     }
 
@@ -1567,7 +1636,7 @@ public class Store extends org.apache.avro.specific.SpecificRecordBase implement
       * @return True if the 'preOrderSettingsId' field has been set, false otherwise.
       */
     public boolean hasPreOrderSettingsId() {
-      return fieldSetFlags()[20];
+      return fieldSetFlags()[21];
     }
 
 
@@ -1577,7 +1646,7 @@ public class Store extends org.apache.avro.specific.SpecificRecordBase implement
       */
     public com.diviso.graeshoppe.store.avro.Store.Builder clearPreOrderSettingsId() {
       preOrderSettingsId = null;
-      fieldSetFlags()[20] = false;
+      fieldSetFlags()[21] = false;
       return this;
     }
 
@@ -1586,7 +1655,7 @@ public class Store extends org.apache.avro.specific.SpecificRecordBase implement
     public Store build() {
       try {
         Store record = new Store();
-        record.id = fieldSetFlags()[0] ? this.id : (java.lang.Long) defaultValue(fields()[0]);
+        record.storeCode = fieldSetFlags()[0] ? this.storeCode : (java.lang.Long) defaultValue(fields()[0]);
         record.idpCode = fieldSetFlags()[1] ? this.idpCode : (java.lang.String) defaultValue(fields()[1]);
         record.storeUniqueId = fieldSetFlags()[2] ? this.storeUniqueId : (java.lang.String) defaultValue(fields()[2]);
         record.status = fieldSetFlags()[3] ? this.status : (java.lang.String) defaultValue(fields()[3]);
@@ -1598,15 +1667,16 @@ public class Store extends org.apache.avro.specific.SpecificRecordBase implement
         record.locationName = fieldSetFlags()[9] ? this.locationName : (java.lang.String) defaultValue(fields()[9]);
         record.cotactNumber = fieldSetFlags()[10] ? this.cotactNumber : (java.lang.Long) defaultValue(fields()[10]);
         record.openingTime = fieldSetFlags()[11] ? this.openingTime : (java.lang.Long) defaultValue(fields()[11]);
-        record.email = fieldSetFlags()[12] ? this.email : (java.lang.String) defaultValue(fields()[12]);
-        record.closingTime = fieldSetFlags()[13] ? this.closingTime : (java.lang.Long) defaultValue(fields()[13]);
-        record.info = fieldSetFlags()[14] ? this.info : (java.lang.String) defaultValue(fields()[14]);
-        record.minAmount = fieldSetFlags()[15] ? this.minAmount : (java.lang.Double) defaultValue(fields()[15]);
-        record.maxDeliveryTime = fieldSetFlags()[16] ? this.maxDeliveryTime : (java.lang.Long) defaultValue(fields()[16]);
-        record.propreitorId = fieldSetFlags()[17] ? this.propreitorId : (java.lang.Long) defaultValue(fields()[17]);
-        record.storeAddressId = fieldSetFlags()[18] ? this.storeAddressId : (java.lang.Long) defaultValue(fields()[18]);
-        record.storeSettingsId = fieldSetFlags()[19] ? this.storeSettingsId : (java.lang.Long) defaultValue(fields()[19]);
-        record.preOrderSettingsId = fieldSetFlags()[20] ? this.preOrderSettingsId : (java.lang.Long) defaultValue(fields()[20]);
+        record.zoneId = fieldSetFlags()[12] ? this.zoneId : (java.lang.String) defaultValue(fields()[12]);
+        record.email = fieldSetFlags()[13] ? this.email : (java.lang.String) defaultValue(fields()[13]);
+        record.closingTime = fieldSetFlags()[14] ? this.closingTime : (java.lang.Long) defaultValue(fields()[14]);
+        record.info = fieldSetFlags()[15] ? this.info : (java.lang.String) defaultValue(fields()[15]);
+        record.minAmount = fieldSetFlags()[16] ? this.minAmount : (java.lang.Double) defaultValue(fields()[16]);
+        record.maxDeliveryTime = fieldSetFlags()[17] ? this.maxDeliveryTime : (java.lang.Long) defaultValue(fields()[17]);
+        record.propreitorId = fieldSetFlags()[18] ? this.propreitorId : (java.lang.Long) defaultValue(fields()[18]);
+        record.storeAddressId = fieldSetFlags()[19] ? this.storeAddressId : (java.lang.Long) defaultValue(fields()[19]);
+        record.storeSettingsId = fieldSetFlags()[20] ? this.storeSettingsId : (java.lang.Long) defaultValue(fields()[20]);
+        record.preOrderSettingsId = fieldSetFlags()[21] ? this.preOrderSettingsId : (java.lang.Long) defaultValue(fields()[21]);
         return record;
       } catch (java.lang.Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);

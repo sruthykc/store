@@ -56,13 +56,14 @@ public class StoreServiceImpl implements StoreService {
 		StoreDTO result = storeMapper.toDto(store);
 
 		String status = "create";
+		String zoneId = result.getOpeningTime().getZone().toString(); 
 		/*
 		 * com.diviso.graeshoppe.store.avro.Store message
 		 * =storeAvroMapper.toAvro(result);
 		 * System.out.println("avro mapped#############################################"
 		 * +message);
 		 */
-		boolean publishstatus = createPublishMesssage(result, status);
+		boolean publishstatus = createPublishMesssage(result, status,zoneId);
 
 		log.debug("------------------------------------------published" + publishstatus);
 
@@ -73,7 +74,7 @@ public class StoreServiceImpl implements StoreService {
 
 	}
 
-	public boolean createPublishMesssage(StoreDTO storeDTO, String status) {
+	public boolean createPublishMesssage(StoreDTO storeDTO, String status,String ZoneId) {
 
 		log.debug("------------------------------------------publish method" + status);
 
