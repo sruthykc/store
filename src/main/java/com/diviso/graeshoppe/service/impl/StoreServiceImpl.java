@@ -15,6 +15,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.integration.support.MessageBuilder;
+
+import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.Optional;
 
@@ -56,34 +58,33 @@ public class StoreServiceImpl implements StoreService {
 		StoreDTO result = storeMapper.toDto(store);
 
 		String status = "create";
-		int zoneId = result.getOpeningTime().getOffset().getTotalSeconds(); 
+		String zoneId = result.getOpeningTime().getZone().toString(); 
 		
-		System.out.println("offset second##5555555555555555555555##########" +result.getOpeningTime().getOffset().toString());
-		System.out.println("offset second##666666666666666666666666666666##########" +zoneId);
+	/*	System.out.println("offset second##5555555555555555555555##########" +result.getOpeningTime().getOffset().toString());
+		System.out.println("offset second##666666666666666666666666666666##########" +zoneId);*/
 		/*result.getOpeningTime().
 		 * com.diviso.graeshoppe.store.avro.Store message
 		 * =storeAvroMapper.toAvro(result);
 		 * System.out.println("avro mapped#############################################"
 		 * +message);
 		 */
-		boolean publishstatus = createPublishMesssage(result, status/*,zoneId*/);
+		boolean publishstatus = createPublishMesssage(result, status,zoneId);
 
 		log.debug("------------------------------------------published" + publishstatus);
 
-		// ZonedDateTime t = ZonedDateTime.now();
 		// t.getZone();
 
 		return result;
 
 	}
 
-	public boolean createPublishMesssage(StoreDTO storeDTO, String status/*,int zoneId*/) {
+	public boolean createPublishMesssage(StoreDTO storeDTO, String status,String zoneId) {
 
 		log.debug("------------------------------------------publish method" + status);
 
 		com.diviso.graeshoppe.store.avro.Store message = storeAvroMapper.toAvro(storeDTO);
 		message.setStatus(status);
-		//message.setZoneId(zoneId);
+		message.setZoneId(zoneId);
 		System.out.println("avro mapped*******************************************" + message);
 
 		return messageChannel.storeOut().send(MessageBuilder.withPayload(message).build());

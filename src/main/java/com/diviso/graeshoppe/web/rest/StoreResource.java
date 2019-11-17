@@ -17,7 +17,8 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
-
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -47,8 +48,16 @@ public class StoreResource {
      */
     @PostMapping("/stores")
     public ResponseEntity<StoreDTO> createStore(@Valid @RequestBody StoreDTO storeDTO) throws URISyntaxException {
-        log.debug("REST request to save Store : {}", storeDTO);
-        if (storeDTO.getId() != null) {
+     //   log.debug("REST request to save Store : {}", storeDTO);
+    	ZoneId zone = ZoneId.of("Asia/Tokyo");
+    	ZonedDateTime closingTime = ZonedDateTime.of(2019, 5, 5, 2, 30, 30 ,3, zone);
+    	ZonedDateTime openingTime = ZonedDateTime.of(2019, 5, 5, 2, 30, 30 ,3, zone);
+    	ZonedDateTime maxDeliveryTime = ZonedDateTime.of(2019, 5, 5, 2, 30, 30 ,3, zone);
+    	storeDTO.setClosingTime(closingTime);
+    	
+    	storeDTO.setOpeningTime(openingTime);
+    	storeDTO.setMaxDeliveryTime(maxDeliveryTime);
+    	if (storeDTO.getId() != null) {
             throw new BadRequestAlertException("A new store cannot already have an ID", ENTITY_NAME, "idexists");
         }
         StoreDTO result = storeService.save(storeDTO);
