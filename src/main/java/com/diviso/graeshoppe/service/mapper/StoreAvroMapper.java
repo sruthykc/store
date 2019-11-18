@@ -83,7 +83,7 @@ public interface StoreAvroMapper extends AvroMapper<com.diviso.graeshoppe.store.
             
     		 return value;
          }
-    	value = maxDelivery.toInstant().toEpochMilli(); 
+    	//value = maxDelivery.toInstant().toEpochMilli(); 
         return value; 
     }
 }
