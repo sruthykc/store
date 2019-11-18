@@ -32,9 +32,9 @@ public interface StoreAvroMapper extends AvroMapper<com.diviso.graeshoppe.store.
     Store toEntity(StoreDTO storeDTO);*/
 
 	@Mapping(source = "image", target = "image", qualifiedByName = "byteArrayToByteBuffer",ignore=true)
-	@Mapping(source = "openingTime", target = "openingTime", qualifiedByName = "openingTimeToLong",ignore=true)
-	@Mapping(source = "closingTime", target = "closingTime", qualifiedByName = "closingTimeToLong",ignore=true)
-	@Mapping(source = "maxDeliveryTime", target = "maxDeliveryTime", qualifiedByName = "maxDeliveryTimeToLong",ignore=true)
+	@Mapping(source = "openingTime", target = "openingTime", qualifiedByName = "openingTimeToLong"/*,ignore=true*/)
+	@Mapping(source = "closingTime", target = "closingTime", qualifiedByName = "closingTimeToLong"/*,ignore=true*/)
+	@Mapping(source = "maxDeliveryTime", target = "maxDeliveryTime", qualifiedByName = "maxDeliveryTimeToLong"/*,ignore=true*/)
 	@Mapping(source = "id", target = "storeCode")
 	com.diviso.graeshoppe.store.avro.Store toAvro(StoreDTO storeDTO);
 	
@@ -55,16 +55,16 @@ public interface StoreAvroMapper extends AvroMapper<com.diviso.graeshoppe.store.
         return byteBuffer;
     }
     @Named("openingTimeToLong") 
-    public static Long openingTimeToLong(ZonedDateTime date) { 
-        return date.toInstant().toEpochMilli(); 
+    public static Long openingTimeToLong(ZonedDateTime opening) { 
+        return opening.toInstant().toEpochMilli(); 
     }
     @Named("closingTimeToLong") 
-    public static Long closingTimeToLong(ZonedDateTime date) { 
-        return date.toInstant().toEpochMilli(); 
+    public static Long closingTimeToLong(ZonedDateTime closing) { 
+        return closing.toInstant().toEpochMilli(); 
     }
     
     @Named("maxDeliveryTimeToLong") 
-    public static Long maxDeliveryToLong(ZonedDateTime date) { 
-        return date.toInstant().toEpochMilli(); 
+    public static Long maxDeliveryToLong(ZonedDateTime maxDelivery) { 
+        return maxDelivery.toInstant().toEpochMilli(); 
     }
 }
