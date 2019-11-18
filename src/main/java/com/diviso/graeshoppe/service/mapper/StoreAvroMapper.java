@@ -59,26 +59,31 @@ public interface StoreAvroMapper extends AvroMapper<com.diviso.graeshoppe.store.
     }
     @Named("openingTimeToLong") 
     public static Long openingTimeToLong(ZonedDateTime opening) { 
+    	Long value = 0L;
     	 if (opening.equals(null)) {
-             return null;
+             return value;
          }
-        return opening.toInstant().toEpochMilli(); 
+    	 value=opening.toInstant().toEpochMilli();
+        return  value;
     }
     @Named("closingTimeToLong") 
     public static Long closingTimeToLong(ZonedDateTime closing) { 
-    	 if (closing.equals(null)) {
-             return null;
+    	Long value = 0L;
+    	if (closing.equals(null)) {
+             return value;
          }
-        return closing.toInstant().toEpochMilli(); 
+    value = closing.toInstant().toEpochMilli(); 
+        return value;
     }
     
     @Named("maxDeliveryTimeToLong") 
     public static Long maxDeliveryToLong(ZonedDateTime maxDelivery) { 
-    	
+    	Long value = 0L;
     	 if (maxDelivery.equals(null)) {
             
-    		 return null;
+    		 return value;
          }
-        return maxDelivery.toInstant().toEpochMilli(); 
+    	 value = maxDelivery.toInstant().toEpochMilli(); 
+        return value; 
     }
 }
