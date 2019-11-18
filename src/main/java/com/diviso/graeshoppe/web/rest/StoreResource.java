@@ -47,10 +47,10 @@ public class StoreResource {
      * @throws URISyntaxException if the Location URI syntax is incorrect
      */
     @PostMapping("/stores")
-    public ResponseEntity<StoreDTO> createStore(/*@Valid @RequestBody StoreDTO storeDTO*/) throws URISyntaxException {
+    public ResponseEntity<StoreDTO> createStore(@Valid @RequestBody StoreDTO storeDTO) throws URISyntaxException {
      //   log.debug("REST request to save Store : {}", storeDTO);
     	
-    	StoreDTO storeDTO = new StoreDTO();
+    	//StoreDTO storeDTO = new StoreDTO();
     	storeDTO.setIdpCode("idpCode");
     	storeDTO.setImageLink("imageLink");
     	storeDTO.setInfo("info");
@@ -64,14 +64,14 @@ public class StoreResource {
     	storeDTO.setEmail("email@lxi.com");
     	
     	
-    	ZoneId zone = ZoneId.of("Asia/Tokyo");
+    	/*ZoneId zone = ZoneId.of("Asia/Tokyo");
     	ZonedDateTime closingTime = ZonedDateTime.of(2019, 5, 5, 2, 30, 30 ,3, zone);
     	ZonedDateTime openingTime = ZonedDateTime.of(2019, 5, 5, 2, 30, 30 ,3, zone);
     	ZonedDateTime maxDeliveryTime = ZonedDateTime.of(2019, 5, 5, 2, 30, 30 ,3, zone);
-    	storeDTO.setClosingTime(closingTime);
+    	storeDTO.setClosingTime(closingTime);*/
     	
-    	storeDTO.setOpeningTime(openingTime);
-    	storeDTO.setMaxDeliveryTime(maxDeliveryTime);
+    	/*storeDTO.setOpeningTime(openingTime);
+    	storeDTO.setMaxDeliveryTime(maxDeliveryTime);*/
     	log.debug("REST request to save Store : {}", storeDTO);
     	if (storeDTO.getId() != null) {
             throw new BadRequestAlertException("A new store cannot already have an ID", ENTITY_NAME, "idexists");

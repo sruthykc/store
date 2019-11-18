@@ -58,7 +58,7 @@ public class StoreServiceImpl implements StoreService {
 		StoreDTO result = storeMapper.toDto(store);
 
 		String status = "create";
-		String zoneId = result.getOpeningTime().getZone().toString(); 
+		String zoneId = "Asia/Tokyo";/*result.getOpeningTime().getZone().toString();*/ 
 		
 	/*	System.out.println("offset second##5555555555555555555555##########" +result.getOpeningTime().getOffset().toString());
 		System.out.println("offset second##666666666666666666666666666666##########" +zoneId);*/
