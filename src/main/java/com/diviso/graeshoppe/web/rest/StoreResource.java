@@ -51,7 +51,7 @@ public class StoreResource {
      //   log.debug("REST request to save Store : {}", storeDTO);
     	
     	//StoreDTO storeDTO = new StoreDTO();
-    	storeDTO.setIdpCode("idpCode");
+    /*	storeDTO.setIdpCode("idpCode");
     	storeDTO.setImageLink("imageLink");
     	storeDTO.setInfo("info");
     	storeDTO.setLatLon("10.833,10.855");
@@ -62,7 +62,7 @@ public class StoreResource {
     	storeDTO.setContactNumber(2l);
     	storeDTO.setStoreUniqueId("storeUniqueId");
     	storeDTO.setEmail("email@lxi.com");
-    	
+    	*/
     	
     	/*ZoneId zone = ZoneId.of("Asia/Tokyo");
     	ZonedDateTime closingTime = ZonedDateTime.of(2019, 5, 5, 2, 30, 30 ,3, zone);
