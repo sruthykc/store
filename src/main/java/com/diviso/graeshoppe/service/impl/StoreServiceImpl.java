@@ -82,12 +82,12 @@ public class StoreServiceImpl implements StoreService {
 
 		log.debug("------------------------------------------publish method" + status);
 
-	/*	if(storeDTO.getZoneId().equals(null)){
+		if(storeDTO.getZoneId()==null){
 			
 			storeDTO.setZoneId("Europe/Doublin");
 			System.out.println("ZONEEEEEEEEEEEEEEEEEEEEEEEEEE"+storeDTO.getZoneId());
 		}
-		*/
+		
 		
 	//	System.out.println("ZONEEEEEEEEEEEEEEEEEEEEEEEEEE"+storeDTO.getZoneId());
 		
