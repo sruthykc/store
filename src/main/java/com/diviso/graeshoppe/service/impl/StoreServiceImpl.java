@@ -88,7 +88,7 @@ public class StoreServiceImpl implements StoreService {
 		}
 		
 		
-		
+		System.out.println("ZONEEEEEEEEEEEEEEEEEEEEEEEEEE"+storeDTO.getZoneId());
 		
 		com.diviso.graeshoppe.store.avro.Store message = storeAvroMapper.toAvro(storeDTO);
 		message.setStatus(status);
