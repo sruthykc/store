@@ -32,9 +32,9 @@ public interface StoreAvroMapper extends AvroMapper<com.diviso.graeshoppe.store.
     Store toEntity(StoreDTO storeDTO);*/
 
 	@Mapping(source = "image", target = "image", qualifiedByName = "byteArrayToByteBuffer",ignore=true)
-	@Mapping(source = "openingTime", target = "openingTime", qualifiedByName = "openingTimeToLong",ignore=true)
-	@Mapping(source = "closingTime", target = "closingTime", qualifiedByName = "closingTimeToLong",ignore=true)
-	@Mapping(source = "maxDeliveryTime", target = "maxDeliveryTime", qualifiedByName = "maxDeliveryTimeToLong",ignore=true)
+	@Mapping(source = "openingTime", target = "openingTime", qualifiedByName = "openingTimeToLong"/*,ignore=true*/)
+	@Mapping(source = "closingTime", target = "closingTime", qualifiedByName = "closingTimeToLong"/*,ignore=true*/)
+	@Mapping(source = "maxDeliveryTime", target = "maxDeliveryTime", qualifiedByName = "maxDeliveryTimeToLong"/*,ignore=true*/)
 	@Mapping(source = "id", target = "storeCode")
 	com.diviso.graeshoppe.store.avro.Store toAvro(StoreDTO storeDTO);
 	
@@ -51,20 +51,32 @@ public interface StoreAvroMapper extends AvroMapper<com.diviso.graeshoppe.store.
     
     @Named("byteArrayToByteBuffer") 
     public static ByteBuffer byteArrayToByteBuffer(byte[] image) { 
+    	 if (image == null) {
+             return null;
+         }
     	ByteBuffer byteBuffer = ByteBuffer.wrap(image);
         return byteBuffer;
     }
     @Named("openingTimeToLong") 
     public static Long openingTimeToLong(ZonedDateTime opening) { 
+    	 if (opening == null) {
+             return null;
+         }
         return opening.toInstant().toEpochMilli(); 
     }
     @Named("closingTimeToLong") 
     public static Long closingTimeToLong(ZonedDateTime closing) { 
+    	 if (closing == null) {
+             return null;
+         }
         return closing.toInstant().toEpochMilli(); 
     }
     
     @Named("maxDeliveryTimeToLong") 
     public static Long maxDeliveryToLong(ZonedDateTime maxDelivery) { 
+    	 if (maxDelivery == null) {
+             return null;
+         }
         return maxDelivery.toInstant().toEpochMilli(); 
     }
 }
