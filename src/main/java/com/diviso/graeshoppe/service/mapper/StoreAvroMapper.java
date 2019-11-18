@@ -59,14 +59,14 @@ public interface StoreAvroMapper extends AvroMapper<com.diviso.graeshoppe.store.
     }
     @Named("openingTimeToLong") 
     public static Long openingTimeToLong(ZonedDateTime opening) { 
-    	 if (opening == null) {
+    	 if (opening.equals(null)) {
              return null;
          }
         return opening.toInstant().toEpochMilli(); 
     }
     @Named("closingTimeToLong") 
     public static Long closingTimeToLong(ZonedDateTime closing) { 
-    	 if (closing == null) {
+    	 if (closing.equals(null)) {
              return null;
          }
         return closing.toInstant().toEpochMilli(); 
@@ -74,8 +74,10 @@ public interface StoreAvroMapper extends AvroMapper<com.diviso.graeshoppe.store.
     
     @Named("maxDeliveryTimeToLong") 
     public static Long maxDeliveryToLong(ZonedDateTime maxDelivery) { 
-    	 if (maxDelivery == null) {
-             return null;
+    	
+    	 if (maxDelivery.equals(null)) {
+            
+    		 return null;
          }
         return maxDelivery.toInstant().toEpochMilli(); 
     }
