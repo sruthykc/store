@@ -47,7 +47,8 @@
 	
 		{"name":"openingTime",
 		"type":"long",
-		"logicalType":"date"},
+		"logicalType":"date",
+		"default":0},
 		
 		{"name":"zoneId",
 		"type":["null","string"],
@@ -58,8 +59,9 @@
 		"default": null},
 		
 		{"name":"closingTime",
-		"type":"long",
-		"logicalType":"date"},
+		"type":["null","long"],
+		"logicalType":"date",
+		"default": 0},
 		
 		{"name":"info",
 		"type":["null","string"],
@@ -70,8 +72,9 @@
 		"default": 0.0},
 		
 		{"name":"maxDeliveryTime",
-		"type":"long",
-		"logicalType":"date"},
+		"type":["null","long"],
+		"logicalType":"date",
+		"default": 0},
 		
 		{"name":"propreitorId",
 		"type":["null","long"],
