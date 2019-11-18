@@ -48,6 +48,8 @@ public class StoreDTO implements Serializable {
     private Double minAmount;
 
     private ZonedDateTime maxDeliveryTime;
+    
+    private String zoneId;
 
 
     private Long propreitorId;
@@ -239,7 +241,15 @@ public class StoreDTO implements Serializable {
         return Objects.hashCode(getId());
     }
 
-    @Override
+    public String getZoneId() {
+		return zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+	}
+
+	@Override
     public String toString() {
         return "StoreDTO{" +
             "id=" + getId() +

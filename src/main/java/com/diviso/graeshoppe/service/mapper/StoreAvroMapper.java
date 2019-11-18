@@ -32,7 +32,7 @@ public interface StoreAvroMapper extends AvroMapper<com.diviso.graeshoppe.store.
     Store toEntity(StoreDTO storeDTO);*/
 
 	@Mapping(source = "image", target = "image", qualifiedByName = "byteArrayToByteBuffer",ignore=true)
-	@Mapping(source = "openingTime", target = "openingTime", qualifiedByName = "zonedDateTimeToLong")
+	@Mapping(source = "openingTime", target = "openingTime", qualifiedByName = "zonedDateTimeToLong",ignore=true)
 	@Mapping(source = "closingTime", target = "closingTime", qualifiedByName = "zonedDateTimeToLong",ignore=true)
 	@Mapping(source = "maxDeliveryTime", target = "maxDeliveryTime", qualifiedByName = "zonedDateTimeToLong",ignore=true)
 	@Mapping(source = "id", target = "storeCode")
