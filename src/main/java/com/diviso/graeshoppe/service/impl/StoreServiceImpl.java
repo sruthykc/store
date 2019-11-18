@@ -84,7 +84,7 @@ public class StoreServiceImpl implements StoreService {
 
 		if(storeDTO.getZoneId()==null){
 			
-			storeDTO.setZoneId("Europe/Doublin");
+			storeDTO.setZoneId("Europe/Dublin");
 			System.out.println("ZONEEEEEEEEEEEEEEEEEEEEEEEEEE"+storeDTO.getZoneId());
 		}
 		
