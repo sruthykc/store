@@ -114,7 +114,7 @@ public class StoreAddressServiceImpl implements StoreAddressService {
 
 		System.out.println("storeAddressAvroMapper mapped*******************************************" + message);
 
-		return messageChannel.storeOut().send(MessageBuilder.withPayload(message).build());
+		return messageChannel.storeAddressOut().send(MessageBuilder.withPayload(message).build());
 
 	}
 
