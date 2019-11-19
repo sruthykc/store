@@ -14,7 +14,7 @@
 		{"name":"street","type":["null","string"],"default": null},
 		{"name":"landmark","type":["null","string"],"default": null}
 	]
-	}
+	},
 
 
 	
