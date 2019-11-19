@@ -1,0 +1,20 @@
+[
+
+{
+	"namespace":"com.diviso.graeshoppe.store.avro",
+	"type":"record",
+	"name":"StoreAddress",
+	"fields":[
+		{"name":"id","type":["null","long"]},
+		{"name":"status","type":["null","string"],"default": null},
+		{"name":"postCode","type":["null","string"],"default": null},
+		{"name":"houseNumber","type":["null","string"],"default": null},
+		{"name":"city","type":["null","string"],"default": null},
+		{"name":"state","type":["null","string"],"default": null},
+		{"name":"street","type":["null","string"],"default": null},
+		{"name":"landmark","type":["null","string"],"default": null}
+	]
+	}
+
+
+]
