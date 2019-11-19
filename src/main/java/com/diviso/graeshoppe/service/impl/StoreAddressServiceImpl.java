@@ -57,7 +57,7 @@ public class StoreAddressServiceImpl implements StoreAddressService {
 		StoreAddressDTO result = storeAddressMapper.toDto(storeAddress);
 		boolean publishstatus = createPublishMesssage(result, status);
 
-		// log.debug("--------------STOREADDRESS----------published" + publishstatus);
+		log.debug("--------------STOREADDRESS----------published" + publishstatus);
 
 		// t.getZone();
 
