@@ -59,7 +59,12 @@ spring:
                     contentType: application/*+avro
                     producer:
                        useNativeEncoding: true
-                     
+                storeAddress:
+                    destination: storeAddress
+                    contentType: application/*+avro
+                    producer:
+                       useNativeEncoding: true
+
             schemaRegistryClient:
               endpoint: http://dev.servers.divisosofttech.com:8081
             schema:

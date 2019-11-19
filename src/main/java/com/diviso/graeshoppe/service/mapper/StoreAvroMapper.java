@@ -13,23 +13,7 @@ import org.mapstruct.*;
  */
 @Mapper(componentModel = "spring"/*, nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS*//*, uses = {PropreitorMapper.class, StoreAddressMapper.class, StoreSettingsMapper.class, PreOrderSettingsMapper.class}*/)
 public interface StoreAvroMapper extends AvroMapper<com.diviso.graeshoppe.store.avro.Store, StoreDTO> {
-/*
-    @Mapping(source = "propreitor.id", target = "propreitorId")
-    @Mapping(source = "storeAddress.id", target = "storeAddressId")
-    @Mapping(source = "storeSettings.id", target = "storeSettingsId")
-    @Mapping(source = "preOrderSettings.id", target = "preOrderSettingsId")
-    StoreDTO toAvro(Store store);
 
-    @Mapping(source = "propreitorId", target = "propreitor")
-    @Mapping(source = "storeAddressId", target = "storeAddress")
-    @Mapping(source = "storeSettingsId", target = "storeSettings")
-    @Mapping(source = "preOrderSettingsId", target = "preOrderSettings")
-    @Mapping(target = "storeTypes", ignore = true)
-    @Mapping(target = "reviews", ignore = true)
-    @Mapping(target = "userRatings", ignore = true)
-    @Mapping(target = "banners", ignore = true)
-    @Mapping(target = "storeDeliveryInfos", ignore = true)
-    Store toEntity(StoreDTO storeDTO);*/
 
 	@Mapping(source = "image", target = "image", qualifiedByName = "byteArrayToByteBuffer"/*,ignore=true*/)
 	@Mapping(source = "openingTime", target = "openingTime", qualifiedByName = "openingTimeToLong"/*,ignore=true*/)
