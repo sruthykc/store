@@ -12,7 +12,7 @@ import org.mapstruct.*;
  * Mapper for the entity Store and its DTO StoreDTO.
  */
 @Mapper(componentModel = "spring"/*, nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS*//*, uses = {PropreitorMapper.class, StoreAddressMapper.class, StoreSettingsMapper.class, PreOrderSettingsMapper.class}*/)
-public interface StoreAvroMapper extends AvroMapper<com.diviso.graeshoppe.store.avro.Store, StoreDTO> {
+public interface StoreAvroMapper extends AvroMapper<com.diviso.graeshoppe.store.avro.StoreInfo, StoreDTO> {
 
 
 	@Mapping(source = "image", target = "image", qualifiedByName = "byteArrayToByteBuffer"/*,ignore=true*/)
@@ -20,7 +20,7 @@ public interface StoreAvroMapper extends AvroMapper<com.diviso.graeshoppe.store.
 	@Mapping(source = "closingTime", target = "closingTime", qualifiedByName = "closingTimeToLong"/*,ignore=true*/)
 	@Mapping(source = "maxDeliveryTime", target = "maxDeliveryTime", qualifiedByName = "maxDeliveryTimeToLong"/*,ignore=true*/)
 	/*@Mapping(source = "id", target = "storeCode")*/
-	com.diviso.graeshoppe.store.avro.Store toAvro(StoreDTO storeDTO);
+	com.diviso.graeshoppe.store.avro.StoreInfo toAvro(StoreDTO storeDTO);
 	
 	
 	
