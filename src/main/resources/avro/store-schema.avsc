@@ -4,7 +4,7 @@
 	{
 	"namespace":"com.diviso.graeshoppe.store.avro",
 	"type":"record",
-	"name":"Store",
+	"name":"StoreInfo",
 	"fields":[
 		{"name":"id",
 		"type":["null","long"]},
