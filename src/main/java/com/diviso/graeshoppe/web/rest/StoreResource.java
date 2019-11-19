@@ -33,6 +33,10 @@ public class StoreResource {
 
     private static final String ENTITY_NAME = "storeStore";
 
+    
+    private static final String CREATE_STORE  = "create";
+    private static final String UPDATE_STORE  = "update";
+    private static final String DELETE_STORE  = "delete";
     private final StoreService storeService;
 
     public StoreResource(StoreService storeService) {
@@ -76,7 +80,7 @@ public class StoreResource {
     	if (storeDTO.getId() != null) {
             throw new BadRequestAlertException("A new store cannot already have an ID", ENTITY_NAME, "idexists");
         }
-        StoreDTO result = storeService.save(storeDTO);
+        StoreDTO result = storeService.save(storeDTO,CREATE_STORE);
         return ResponseEntity.created(new URI("/api/stores/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
             .body(result);
@@ -97,7 +101,7 @@ public class StoreResource {
         if (storeDTO.getId() == null) {
             throw new BadRequestAlertException("Invalid id", ENTITY_NAME, "idnull");
         }
-        StoreDTO result = storeService.save(storeDTO);
+        StoreDTO result = storeService.save(storeDTO,UPDATE_STORE);
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, storeDTO.getId().toString()))
             .body(result);
@@ -139,7 +143,7 @@ public class StoreResource {
     @DeleteMapping("/stores/{id}")
     public ResponseEntity<Void> deleteStore(@PathVariable Long id) {
         log.debug("REST request to delete Store : {}", id);
-        storeService.delete(id);
+        storeService.delete(id,DELETE_STORE);
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
     }
 }

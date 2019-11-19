@@ -30,6 +30,10 @@ public class StoreAddressResource {
     private final Logger log = LoggerFactory.getLogger(StoreAddressResource.class);
 
     private static final String ENTITY_NAME = "storeStoreAddress";
+    
+    private static final String CREATE_STOREADDRESS  = "create";
+    private static final String UPDATE_STOREADDRESS  = "update";
+    private static final String DELETE_STOREADDRESS  = "delete";
 
     private final StoreAddressService storeAddressService;
 
@@ -50,7 +54,7 @@ public class StoreAddressResource {
         if (storeAddressDTO.getId() != null) {
             throw new BadRequestAlertException("A new storeAddress cannot already have an ID", ENTITY_NAME, "idexists");
         }
-        StoreAddressDTO result = storeAddressService.save(storeAddressDTO);
+        StoreAddressDTO result = storeAddressService.save(storeAddressDTO,CREATE_STOREADDRESS);
         return ResponseEntity.created(new URI("/api/store-addresses/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
             .body(result);
@@ -71,7 +75,7 @@ public class StoreAddressResource {
         if (storeAddressDTO.getId() == null) {
             throw new BadRequestAlertException("Invalid id", ENTITY_NAME, "idnull");
         }
-        StoreAddressDTO result = storeAddressService.save(storeAddressDTO);
+        StoreAddressDTO result = storeAddressService.save(storeAddressDTO,UPDATE_STOREADDRESS);
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, storeAddressDTO.getId().toString()))
             .body(result);
@@ -113,7 +117,7 @@ public class StoreAddressResource {
     @DeleteMapping("/store-addresses/{id}")
     public ResponseEntity<Void> deleteStoreAddress(@PathVariable Long id) {
         log.debug("REST request to delete StoreAddress : {}", id);
-        storeAddressService.delete(id);
+        storeAddressService.delete(id,DELETE_STOREADDRESS);
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
     }
 }

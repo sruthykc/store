@@ -18,7 +18,7 @@ public interface StoreService {
      * @param storeDTO the entity to save
      * @return the persisted entity
      */
-    StoreDTO save(StoreDTO storeDTO);
+    StoreDTO save(StoreDTO storeDTO,String status);
 
     /**
      * Get all the stores.
@@ -42,5 +42,5 @@ public interface StoreService {
      *
      * @param id the id of the entity
      */
-    void delete(Long id);
+    void delete(Long id,String status);
 }

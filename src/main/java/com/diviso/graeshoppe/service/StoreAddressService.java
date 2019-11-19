@@ -18,7 +18,7 @@ public interface StoreAddressService {
      * @param storeAddressDTO the entity to save
      * @return the persisted entity
      */
-    StoreAddressDTO save(StoreAddressDTO storeAddressDTO);
+    StoreAddressDTO save(StoreAddressDTO storeAddressDTO,String status);
 
     /**
      * Get all the storeAddresses.
@@ -42,5 +42,5 @@ public interface StoreAddressService {
      *
      * @param id the id of the entity
      */
-    void delete(Long id);
+    void delete(Long id,String status);
 }

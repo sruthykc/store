@@ -51,13 +51,13 @@ public class StoreServiceImpl implements StoreService {
 	 * @return the persisted entity
 	 */
 	@Override
-	public StoreDTO save(StoreDTO storeDTO) {
+	public StoreDTO save(StoreDTO storeDTO,String status) {
 		log.debug("Request to save Store : {}", storeDTO);
 		Store store = storeMapper.toEntity(storeDTO);
 		store = storeRepository.save(store);
 		StoreDTO result = storeMapper.toDto(store);
 
-		String status = "create";
+		
 		//String zoneId = "Asia/Tokyo";/*result.getOpeningTime().getZone().toString();*/ 
 		
 	/*	System.out.println("offset second##5555555555555555555555##########" +result.getOpeningTime().getOffset().toString());
@@ -85,7 +85,7 @@ public class StoreServiceImpl implements StoreService {
 		if(storeDTO.getZoneId()==null){
 			
 			storeDTO.setZoneId("Europe/Dublin");
-			System.out.println("ZONEEEEEEEEEEEEEEEEEEEEEEEEEE"+storeDTO.getZoneId());
+			
 		}
 		
 		
@@ -135,7 +135,7 @@ public class StoreServiceImpl implements StoreService {
 	 *            the id of the entity
 	 */
 	@Override
-	public void delete(Long id) {
+	public void delete(Long id,String status) {
 		log.debug("Request to delete Store : {}", id);
 		storeRepository.deleteById(id);
 	}
